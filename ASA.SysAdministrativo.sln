@@ -3,9 +3,53 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Interface - UI", "User Interface - UI", "{27DBBCA8-0C0A-40C3-8D37-DCD518965FEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities - EN", "Entities - EN", "{1BD4819F-C8CD-4921-9ADF-ABA7BAD2C315}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer - DAL", "Data Access Layer - DAL", "{8411FCB9-BECB-4DA2-AF0E-E77C88D21417}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic - BL", "Business Logic - BL", "{67E3F73E-8635-4EEA-82F6-847BE9683744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASA.SysAdministrativo.Web", "ASA.SysAdministrativo.Web\ASA.SysAdministrativo.Web.csproj", "{2BE0927C-4F13-4CB9-B2AC-4ADE94C9CF9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASA.SysAdministrativo.EN", "ASA.SysAdministrativo.EN\ASA.SysAdministrativo.EN.csproj", "{FF7B288C-9897-4F06-8F8B-DFB86B4CE7E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASA.SysAdministrativo.DAL", "ASA.SysAdministrativo.DAL\ASA.SysAdministrativo.DAL.csproj", "{9B2A73FD-F87B-47AE-AB80-3F0284F290B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASA.SysAdministrativo.BL", "ASA.SysAdministrativo.BL\ASA.SysAdministrativo.BL.csproj", "{DEAA3E0E-8AFC-4F56-B4BC-BF00AB4F5440}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BE0927C-4F13-4CB9-B2AC-4ADE94C9CF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE0927C-4F13-4CB9-B2AC-4ADE94C9CF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE0927C-4F13-4CB9-B2AC-4ADE94C9CF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE0927C-4F13-4CB9-B2AC-4ADE94C9CF9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF7B288C-9897-4F06-8F8B-DFB86B4CE7E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7B288C-9897-4F06-8F8B-DFB86B4CE7E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7B288C-9897-4F06-8F8B-DFB86B4CE7E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7B288C-9897-4F06-8F8B-DFB86B4CE7E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B2A73FD-F87B-47AE-AB80-3F0284F290B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2A73FD-F87B-47AE-AB80-3F0284F290B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B2A73FD-F87B-47AE-AB80-3F0284F290B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B2A73FD-F87B-47AE-AB80-3F0284F290B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAA3E0E-8AFC-4F56-B4BC-BF00AB4F5440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAA3E0E-8AFC-4F56-B4BC-BF00AB4F5440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAA3E0E-8AFC-4F56-B4BC-BF00AB4F5440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAA3E0E-8AFC-4F56-B4BC-BF00AB4F5440}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2BE0927C-4F13-4CB9-B2AC-4ADE94C9CF9C} = {27DBBCA8-0C0A-40C3-8D37-DCD518965FEC}
+		{FF7B288C-9897-4F06-8F8B-DFB86B4CE7E1} = {1BD4819F-C8CD-4921-9ADF-ABA7BAD2C315}
+		{9B2A73FD-F87B-47AE-AB80-3F0284F290B3} = {8411FCB9-BECB-4DA2-AF0E-E77C88D21417}
+		{DEAA3E0E-8AFC-4F56-B4BC-BF00AB4F5440} = {67E3F73E-8635-4EEA-82F6-847BE9683744}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF1D37E2-61EC-4DAE-BD86-36AEBEC2626F}
