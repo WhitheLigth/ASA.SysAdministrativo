@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ASA.SysAdministrativo.EN\ASA.SysAdministrativo.EN.csproj" />
+  </ItemGroup>
+
 </Project>

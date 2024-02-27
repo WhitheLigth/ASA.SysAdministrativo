@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ASA.SysAdministrativo.BL\ASA.SysAdministrativo.BL.csproj" />
+    <ProjectReference Include="..\ASA.SysAdministrativo.EN\ASA.SysAdministrativo.EN.csproj" />
+  </ItemGroup>
+
 </Project>
