@@ -1,0 +1,23 @@
+CREATE DATABASE ASASysAdministrativoDB;
+GO
+USE ASASysAdministrativoDB;
+GO
+CREATE TABLE Empleados(
+Id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+Nombre VARCHAR(50) NOT NULL,
+Apellido VARCHAR(50) NOT NULL,
+Dui VARCHAR(10) NOT NULL,
+FechaDeNacimiento DATE NOT NULL,
+Edad VARCHAR(3) NOT NULL,
+Genero VARCHAR(10) NOT NULL,
+EstadoCivil VARCHAR(15) NOT NULL,
+Direccion VARCHAR(100) NOT NULL,
+Telefono VARCHAR(9) NOT NULL,
+CorreoElectronico VARCHAR(100) NOT NULL,
+NumeroDeEmergencia VARCHAR(9) NOT NULL,
+TipoDeBachillerato VARCHAR(100) NOT NULL,
+TituloUniversitario VARCHAR(100) NOT NULL,
+ExperienciaLaboral VARCHAR(200) NOT NULL,
+AreaDeEspecializacion VARCHAR(100) NOT NULL,
+PuestoOCargo VARCHAR(50) NOT NULL,
+);

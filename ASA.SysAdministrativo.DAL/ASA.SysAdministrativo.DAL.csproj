@@ -15,4 +15,8 @@
     <ProjectReference Include="..\ASA.SysAdministrativo.EN\ASA.SysAdministrativo.EN.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Document\" />
+  </ItemGroup>
+
 </Project>
