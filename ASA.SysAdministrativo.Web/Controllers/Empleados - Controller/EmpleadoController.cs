@@ -15,7 +15,7 @@ namespace ASA.SysAdministrativo.Web.Controllers.Empleados___Controller
         // Creamos la Instancia para Acceder a los metodos
         EmpleadosBL empleadosBL = new EmpleadosBL();
 
-        // GET: EmpleadoController
+        // Metodo para mostrar la vista Index de Empleados
         public ActionResult Index()
         {
             return View();
