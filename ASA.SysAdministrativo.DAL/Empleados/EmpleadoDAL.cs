@@ -15,6 +15,7 @@ namespace ASA.SysAdministrativo.DAL.Empleados
     public class EmpleadoDAL
     {
         #region METODO PARA GUARDAR
+        // Metodo para guardar un nuevo registro a la base de datos
         public static async Task<int> CrearEmpleadoAsync (Empleado pEmpleados)
         {
             int result = 0;
