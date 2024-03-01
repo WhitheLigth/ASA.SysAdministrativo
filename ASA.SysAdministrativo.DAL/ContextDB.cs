@@ -16,7 +16,7 @@ namespace ASA.SysAdministrativo.DAL
     public class ContextDB : DbContext
     {
         #region REFERENCIAS DE TABLAS DE LA BD
-        public DbSet<Empleados> Empleados { get; set; } //Coleccion que hace referencia a la tabla de la base de datos
+        public DbSet<Empleado> Empleados { get; set; } //Coleccion que hace referencia a la tabla de la base de datos
         #endregion
 
         // Metodo de configuracion a la conexion a la base de datos
