@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ASA.SysAdministrativo.EN.Empleados_EN
 {
-    public class Empleados
+    public class Empleado
     {
         #region Atributos para Empleados
         [Key]
