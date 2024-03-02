@@ -1,3 +1,61 @@
 ﻿@{
+    //Titulo de la Pestaña
     ViewData["Title"] = "Empleados";
+    int numPage = 1; // Paginacion
+    int numRegistros = 0; // reset de la paginacion
+    int numRegistrosPorPage = 10; //Dato a mostrar en la paginacion
+    int[] tops = { 10, 20, 50, -1 }; // para que el user eliga cuantos registros quiere mostrar
+    int topActual = Convert.ToInt32(ViewBag.Top); //controla cuanto registros ha seleccionado el usario
 }
+<br />
+<br />
+<br />
+@* Titulo *@
+<h1>Mantenimiento Empleados</h1>
+
+<form asp-action="Index">
+    <div class="row">
+        @* Espacio para buscar por Nombre *@
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label">Nombre</label>
+                <input type="text" class="form-control" name="Name" />
+            </div>
+        </div>
+        @* Espacio para buscar por Dui *@
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label">Dui</label>
+                <input type="text" class="form-control" name="Dui" />
+            </div>
+        </div>
+        @* Selector de cantidad de registros a mostrar *@
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="control-label">Top</label>
+                <select name="Top_Aux" class="form-control">
+                    @* Bucle foreach para iterar sobre la colección tops *@
+                    @foreach (var item in tops)
+                    {
+                        @* Construcción de las opciones de la lista desplegable *@
+                        string strItem = item != -1 ? item.ToString() : "Todos";
+                        @* Validamos si es diferente a topActual que prosiga si no continua con lo siguiente *@
+                        if (item != topActual)
+                        {
+                            <option value="@item">@strItem</option>
+                        }
+                        else
+                        {
+                            <option selected value="@item">@strItem</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    @* Boton para crear nuevo Empleado *@
+    <div class="col-md-4 m-2">
+        <input type="submit" value="Buscar" class="btn btn-outline-info" /> &nbsp;&nbsp;
+        <a asp-action="#" class="btn btn-outline-primary">Nuevo Empleado</a>
+    </div>
+</form>
