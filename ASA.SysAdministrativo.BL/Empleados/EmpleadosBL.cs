@@ -22,6 +22,14 @@ namespace ASA.SysAdministrativo.BL.Empleados
         }
         #endregion
 
+        #region METODO PARA MODIFICAR
+        // Metodo para modificar un registro existente en la base de datos
+        public async Task<int> UpdateAsync(Empleado pEmpleado)
+        {
+            return await EmpleadoDAL.UpdateAsync(pEmpleado);
+        }
+        #endregion
+
         #region METODO PARA MOSTRAR
         // Metodo para mostrar una lista de registros existentes
         public async Task<List<Empleado>> GetAllAsync()
