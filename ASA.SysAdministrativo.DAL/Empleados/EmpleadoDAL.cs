@@ -30,6 +30,41 @@ namespace ASA.SysAdministrativo.DAL.Empleados
         }
         #endregion
 
+        #region METODO PARA MODIFICAR
+        // Metodo para modificar un registro existente en la based de datos
+        public static async Task<int> UpdateAsync(Empleado pEmpleado)
+        {
+            int result = 0;
+            using (var dbContext = new ContextDB())
+            {
+                var empleadoDB = await dbContext.Empleados.FirstOrDefaultAsync(c => c.Id == pEmpleado.Id);
+                if (empleadoDB != null)
+                {
+                    empleadoDB.Nombre = pEmpleado.Nombre;
+                    empleadoDB.Apellido = pEmpleado.Apellido;
+                    empleadoDB.Dui = pEmpleado.Dui;
+                    empleadoDB.FechaDeNacimiento = pEmpleado.FechaDeNacimiento;
+                    empleadoDB.Edad = pEmpleado.Edad;
+                    empleadoDB.Genero = pEmpleado.Genero;
+                    empleadoDB.EstadoCivil = pEmpleado.EstadoCivil;
+                    empleadoDB.Direccion = pEmpleado.Direccion;
+                    empleadoDB.Telefono = pEmpleado.Telefono;
+                    empleadoDB.CorreoElectronico = pEmpleado.CorreoElectronico;
+                    empleadoDB.NumeroDeEmergencia = pEmpleado.NumeroDeEmergencia;
+                    empleadoDB.TipoDeBachillerato = pEmpleado.TipoDeBachillerato;
+                    empleadoDB.TituloUniversitario = pEmpleado.TituloUniversitario;
+                    empleadoDB.ExperienciaLaboral = pEmpleado.ExperienciaLaboral;
+                    empleadoDB.AreaDeEspecializacion = pEmpleado.AreaDeEspecializacion;
+                    empleadoDB.PuestoOCargo = pEmpleado.PuestoOCargo;
+
+                    dbContext.Update(empleadoDB);
+                    result = await dbContext.SaveChangesAsync();
+                }
+            }
+            return result;  // Si se realizo con exito devuelve 1 sino devuelve 0
+        }
+        #endregion
+
         #region METODO PARA MOSTRAR
         //Metodo para mostrar una lista de Registros
         public static async Task<List<Empleado>> GetAllAsync()
