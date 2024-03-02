@@ -15,11 +15,22 @@ namespace ASA.SysAdministrativo.Web.Controllers.Empleados___Controller
         // Creamos la Instancia para Acceder a los metodos
         EmpleadosBL empleadosBL = new EmpleadosBL();
 
+        #region METODO PARA MOSTRAR INDEX
         // Metodo para mostrar la vista Index de Empleados
-        public ActionResult Index()
+        public async Task<IActionResult> Index(Empleado employee = null)
         {
-            return View();
+            if (employee == null)
+                employee = new Empleado();
+            if (employee.Top_Aux == 0)
+                employee.Top_Aux = 10;
+            else if (employee.Top_Aux == -1)
+                employee.Top_Aux = 0;
+
+            var employees = await empleadosBL.SearchAsync(employee);
+            ViewBag.Top = employee.Top_Aux;
+            return View(employees);
         }
+        #endregion
 
         // GET: EmpleadoController/Details/5
         public ActionResult Details(int id)
