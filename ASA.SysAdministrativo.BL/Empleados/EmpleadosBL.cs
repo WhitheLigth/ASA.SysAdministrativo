@@ -29,5 +29,13 @@ namespace ASA.SysAdministrativo.BL.Empleados
             return await EmpleadoDAL.GetAllAsync();
         }
         #endregion
+
+        #region METODO PARA BUSCAR
+        // Metodo para buscar registros existentes
+        public async Task<List<Empleado>> SearchAsync(Empleado employee)
+        {
+            return await EmpleadoDAL.SearchAsync(employee);
+        }
+        #endregion
     }
 }

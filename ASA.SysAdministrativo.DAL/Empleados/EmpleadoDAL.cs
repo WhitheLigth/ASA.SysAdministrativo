@@ -42,5 +42,47 @@ namespace ASA.SysAdministrativo.DAL.Empleados
             return empleados;
         }
         #endregion
+
+        #region METODO PARA BUSCAR REGISTROS MEDIANTE EL USO DE FILTROS (Por Id, Por Nombre y por DUI)
+        // IQueryable es una interfaz que toma un coleccion a la cual se le pueden implementar multiples consultas (Filtros) 
+        internal static IQueryable<Empleado> QuerySelect(IQueryable<Empleado> query, Empleado employee)
+        {
+            // Por ID
+            if (employee.Id > 0)
+                query = query.Where(c => c.Id == employee.Id);
+
+            // Por Nomnbre, Si es verdadero lo vuelve falso y viceversa 
+            if (!string.IsNullOrWhiteSpace(employee.Nombre))
+                query = query.Where(c => c.Nombre.Contains(employee.Nombre));
+
+            // Se agrego por si se llega a utilizar
+            if (!string.IsNullOrWhiteSpace(employee.Dui))
+                query = query.Where(c => c.Dui.Contains(employee.Dui));
+
+            query = query.OrderByDescending(c => c.Id).AsQueryable();
+
+            // Para la cantidad de registros a mostrar 
+            if (employee.Top_Aux > 0)
+                query = query.Take(employee.Top_Aux).AsQueryable();
+
+            return query;
+
+        }
+        #endregion
+
+        #region METODO PARA BUSCAR
+        // Metodo para buscar registros existentes
+        public static async Task<List<Empleado>> SearchAsync(Empleado pEmpleado)
+        {
+            var empleados = new List<Empleado>();
+            using (var dbContext = new ContextDB())
+            {
+                var select = dbContext.Empleados.AsQueryable();
+                select = QuerySelect(select, pEmpleado);
+                empleados = await select.ToListAsync();
+            }
+            return empleados;
+        }
+        #endregion
     }
 }
