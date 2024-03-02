@@ -21,5 +21,13 @@ namespace ASA.SysAdministrativo.BL.Empleados
             return await EmpleadoDAL.CrearEmpleadoAsync(employee);
         }
         #endregion
+
+        #region METODO PARA MOSTRAR
+        // Metodo para mostrar una lista de registros existentes
+        public async Task<List<Empleado>> GetAllAsync()
+        {
+            return await EmpleadoDAL.GetAllAsync();
+        }
+        #endregion
     }
 }
