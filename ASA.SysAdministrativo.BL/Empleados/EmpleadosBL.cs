@@ -38,6 +38,14 @@ namespace ASA.SysAdministrativo.BL.Empleados
         }
         #endregion
 
+        #region METODO PARA MOSTRAR POR ID
+        // Metodo para mostrar un registro especifico bajo un Id
+        public async Task<Empleado> GetByIdAsync(Empleado pEmpleado)
+        {
+            return await EmpleadoDAL.GetByIdAsync(pEmpleado);
+        }
+        #endregion
+
         #region METODO PARA BUSCAR
         // Metodo para buscar registros existentes
         public async Task<List<Empleado>> SearchAsync(Empleado employee)

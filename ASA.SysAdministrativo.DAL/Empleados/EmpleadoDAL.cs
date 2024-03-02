@@ -78,6 +78,19 @@ namespace ASA.SysAdministrativo.DAL.Empleados
         }
         #endregion
 
+        #region METODO PARA MOSTRAR POR ID
+        // Metodo para mostrar un registro especifico bajo un Id
+        public static async Task<Empleado> GetByIdAsync(Empleado pEmpleado)
+        {
+            var empleadoDB = new Empleado();
+            using (var dbContext = new ContextDB())
+            {
+                empleadoDB = await dbContext.Empleados.FirstOrDefaultAsync(c => c.Id == pEmpleado.Id);
+            }
+            return empleadoDB;
+        }
+        #endregion
+
         #region METODO PARA BUSCAR REGISTROS MEDIANTE EL USO DE FILTROS (Por Id, Por Nombre y por DUI)
         // IQueryable es una interfaz que toma un coleccion a la cual se le pueden implementar multiples consultas (Filtros) 
         internal static IQueryable<Empleado> QuerySelect(IQueryable<Empleado> query, Empleado employee)
