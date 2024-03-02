@@ -62,15 +62,14 @@
         <a asp-action="Create" class="btn btn-outline-primary">Nuevo Empleado</a>
     </div>
 </form>
-
+<br />
+<br />
+<h3>Tabla de Resultados</h3>
 @* DataView para los registros existentes y Acciones CRUD *@
 <table class="table">
     @* Encabezado de la Tabla *@
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
@@ -101,9 +100,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nombre)
                 </td>
