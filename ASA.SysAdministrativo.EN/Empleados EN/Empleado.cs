@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 // Referencias Necesarias Para El Correcto Funcionamiento
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #endregion
 
@@ -105,5 +106,8 @@ namespace ASA.SysAdministrativo.EN.Empleados_EN
         [RegularExpression("^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$", ErrorMessage = "El Puesto o Cargo debe contener solo Letras")] // Validamos el tipo de dato
         public string PuestoOCargo { get; set; } = string.Empty;
         #endregion
+
+        [NotMapped]
+        public int Top_Aux { get; set; } //Propiedad auxiliar para el Paginado
     }
 }
