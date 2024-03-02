@@ -155,6 +155,82 @@
 
 @* Seccion de Scripts (C# o JavaScript) *@
 @section Scripts {
+
+    @* Script para insertar un - despues de 8 numeros en el campo Dui *@
+    <script>
+        // Obtén la referencia al elemento de entrada de DUI
+        var duiInput = document.querySelector('input[name="Dui"]');
+
+        // Agrega un event listener para el evento de entrada de texto
+        duiInput.addEventListener('input', function () {
+            // Obtén el valor actual del campo de DUI
+            var duiValue = duiInput.value;
+
+            // Verifica si ya se han ingresado los primeros 8 dígitos
+            if (duiValue.length === 8) {
+                // Agrega automáticamente el guion después de los primeros 8 dígitos
+                duiInput.value = duiValue.substring(0, 8) + '-';
+            }
+        });
+    </script>
+
+    @* Script para Calcular la Edad *@
+    <script>
+        // Obtén la referencia al elemento de entrada de fecha y de edad
+        var fechaInput = document.querySelector('input[name="FechaDeNacimiento"]');
+        var edadInput = document.querySelector('input[name="Edad"]');
+
+        // Agrega un event listener para el cambio en la fecha de nacimiento
+        fechaInput.addEventListener('change', function() {
+            // Obtiene la fecha de nacimiento del input
+            var fechaNacimiento = new Date(fechaInput.value);
+
+            // Obtiene la fecha actual
+            var fechaActual = new Date();
+
+            // Calcula la edad restando el año de nacimiento del año actual
+            var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+            // Ajusta la edad si la fecha de nacimiento aún no ha ocurrido este año
+            if (fechaNacimiento.getMonth() > fechaActual.getMonth() ||
+                (fechaNacimiento.getMonth() === fechaActual.getMonth() && fechaNacimiento.getDate() > fechaActual.getDate())) {
+                edad--;
+            }
+
+            // Actualiza el valor del campo de edad
+            edadInput.value = edad;
+        });
+    </script>
+
+    @* Script para Agregar Automaticamente un - despues de los primeros 4 digitos en Telefono y Numero de Emergencia *@
+    <script>
+        // Obtén la referencia a los elementos de entrada de Teléfono y Número de Emergencia
+        var telefonoInput = document.querySelector('input[name="Telefono"]');
+        var emergenciaInput = document.querySelector('input[name="NumeroDeEmergencia"]');
+
+        // Función para agregar el guion después de los primeros 4 dígitos
+        function agregarGuionDespuesDeCuatroDigitos(inputElement) {
+            var inputValue = inputElement.value;
+
+            // Verifica si ya se han ingresado los primeros 4 dígitos
+            if (inputValue.length === 4) {
+                // Agrega automáticamente el guion después de los primeros 4 dígitos
+                inputElement.value = inputValue.substring(0, 4) + '-';
+            }
+        }
+
+        // Agrega event listener para el evento de entrada de texto en el campo de Teléfono
+        telefonoInput.addEventListener('input', function () {
+            agregarGuionDespuesDeCuatroDigitos(telefonoInput);
+        });
+
+        // Agrega event listener para el evento de entrada de texto en el campo de Número de Emergencia
+        emergenciaInput.addEventListener('input', function () {
+            agregarGuionDespuesDeCuatroDigitos(emergenciaInput);
+        });
+    </script>
+
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
