@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 // Referencias Necesarias Para El Correcto Funcionamiento
 using ASA.SysAdministrativo.EN.Empleados_EN;
+using Microsoft.EntityFrameworkCore;
 
 
 #endregion
@@ -26,6 +27,19 @@ namespace ASA.SysAdministrativo.DAL.Empleados
                 result = await dbContext.SaveChangesAsync(); // Await sirve para esperar a terminar todos los procesos para devolverlos todos juntos
             }
             return result;  // Si se realizo con exito devuelve 1 sino devuelve 0
+        }
+        #endregion
+
+        #region METODO PARA MOSTRAR
+        //Metodo para mostrar una lista de Registros
+        public static async Task<List<Empleado>> GetAllAsync()
+        {
+            var empleados = new List<Empleado>();
+            using (var dbContext = new ContextDB())
+            {
+                empleados = await dbContext.Empleados.ToListAsync();
+            }
+            return empleados;
         }
         #endregion
     }
