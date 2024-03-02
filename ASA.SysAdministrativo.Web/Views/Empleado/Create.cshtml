@@ -1,0 +1,135 @@
+﻿@{
+    //Titulo de la Pestaña
+    ViewData["Title"] = "Agregar Empleado";
+}
+<br />
+<br />
+<br />
+<h3>Agregar Nuevo Empleado - ArmonySound Academic</h3>
+<form asp-action="Create">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header">Informacion Personal</h5>
+                <div class="card-body demo-vertical-spacing demo-only-element">
+                    <div style="display:flex; margin-left:5px">
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Nombre</label>
+                            <input type="text" class="form-control" placeholder="Ingresar" style="">
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Apellido</label>
+                            <input type="text" class="form-control" placeholder="Ingresar" style="">
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Dui</label>
+                            <input type="text" class="form-control" placeholder="XXXXXXXX-X" style="">
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" style="">
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Edad</label>
+                            <input type="text" class="form-control" style="width:90px">
+                        </div>
+                    </div>
+                    <div style="display:flex; margin-left:7px">
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Genero</label>
+                            <select class="form-select" name="Gender">
+                                <option value="seleccionar">Seleccionar</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Estado Civil</label>
+                            <select class="form-select" name="CivilStatus">
+                                <option value="seleccionar">Seleccionar</option>
+                                <option value="soltero/a">Soltero/a</option>
+                                <option value="casado/a">Casado/a</option>
+                                <option value="divorciado/a">Divorciado/a</option>
+                                <option value="viudo/a">Viudo/a</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Direccion</label>
+                            <input type="text" class="form-control" placeholder="Ingresar" style="width:500px">
+                        </div>
+                    </div>
+                    <div style="display:flex; margin-left:5px">
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Telefono</label>
+                            <input type="text" class="form-control" placeholder="0000-0000" style="">
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Correo Electronico</label>
+                            <input type="email" class="form-control" placeholder="Ingresar" style="">
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Numero de Emergencia</label>
+                            <input type="text" class="form-control" placeholder="0000-0000" style="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header">Informacion Adicional</h5>
+                <div class="card-body demo-vertical-spacing demo-only-element">
+                    <div style="display:flex; margin-left:5px">
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Tipo de Bachillerato</label>
+                            <input type="text" class="form-control" placeholder="Ingresar" style="width:500px">
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Tipo Universitario</label>
+                            <input type="text" class="form-control" placeholder="Ingresar" style="width:500px">
+                        </div>
+                    </div>
+                    <div class="mb-3" style="margin-left:inherit">
+                        <label class="form-label" for="basic-default-fullname">Experiencia Laboral</label>
+                        <input type="text" class="form-control" placeholder="Ingresar" style="width:800px">
+                    </div>
+                    <div style="display:flex; margin-left:5px">
+                        <div class="mb-3">
+                            <label class="form-label" for="basic-default-fullname">Area de Especializacion</label>
+                            <input type="text" class="form-control" placeholder="Ingresar" style="width:700px">
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label class="form-label" for="basic-default-fullname">Puesto o Cargo</label>
+                            <select class="form-select" name="PuestoOcargo">
+                                <option value="seleccionar">Seleccionar</option>
+                                <option value="maestrodepiano">Maestro de Piano</option>
+                                <option value="maestrodebateria">Maestro de Bateria</option>
+                                <option value="maestrodebajo">Maestro de Bajo</option>
+                                <option value="maestrodeguitarra">Maestro de Guitarra</option>
+                                <option value="maestrodecanto">Maestro de Canto</option>
+                                <option value="ordenansa">Ordenansa</option>
+                                <option value="secretario/a">Secretario/a</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-group mb-3" style="margin-right:3%">
+        <input type="submit" value="Agregar Empleado" class="btn btn-primary" style="margin-right:3%; width:200px" />
+        <a asp-action="Index">Regresar</a>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
