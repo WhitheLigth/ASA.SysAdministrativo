@@ -64,26 +64,33 @@ namespace ASA.SysAdministrativo.Web.Controllers.Empleados___Controller
         }
         #endregion
 
-        // GET: EmpleadoController/Edit/5
-        public ActionResult Edit(int id)
+        #region METODO PARA MODIFICAR
+        // Metodo para modificar un registro existente en la base de datos
+        public async Task<IActionResult> Edit(int id)
         {
-            return View();
+            var empleado = await empleadosBL.GetByIdAsync(new Empleado { Id = id });
+            ViewBag.Error = "";
+            return View(empleado);
         }
 
-        // POST: EmpleadoController/Edit/5
+        // Metodo para modificar un registro existente en la base de datos
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(int id, Empleado pEmpleado)
         {
             try
             {
+                int result = await empleadosBL.UpdateAsync(pEmpleado);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
+                ViewBag.Erro = ex.Message;
                 return View();
             }
         }
+
+        #endregion
 
         // GET: EmpleadoController/Delete/5
         public ActionResult Delete(int id)
