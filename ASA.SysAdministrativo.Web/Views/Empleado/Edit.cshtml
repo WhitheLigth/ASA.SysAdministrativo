@@ -1,0 +1,258 @@
+﻿@* @* Referencia al Modelo a utilizar *@
+@model ASA.SysAdministrativo.EN.Empleados_EN.Empleado
+
+@{
+    //Titulo de la Pestaña
+    ViewData["Title"] = "Modificar Empleado";
+}
+<br />
+<br />
+<br />
+@* Titulo *@
+<h3>Modificar Empleado Existente - ArmonySound Academic</h3>
+@* Formultario para Guardar *@
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @* Carta para Informacion Personal *@
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header">Informacion Personal</h5>
+                <div class="card-body demo-vertical-spacing demo-only-element">
+                    <div style="display:flex; margin-left:5px">
+                        <div class="mb-3">
+                            <label asp-for="Nombre" class="form-label" for="basic-default-fullname">Nombre</label>
+                            <input asp-for="Nombre" type="text" class="form-control" placeholder="Ingresar" style="">
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="Apellido" class="form-label" for="basic-default-fullname">Apellido</label>
+                            <input asp-for="Apellido" type="text" class="form-control" placeholder="Ingresar" style="">
+                            <span asp-validation-for="Apellido" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="Dui" class="form-label" for="basic-default-fullname">Dui</label>
+                            <input asp-for="Dui" type="text" class="form-control" placeholder="XXXXXXXX-X" style="">
+                            <span asp-validation-for="Dui" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="FechaDeNacimiento" class="form-label" for="basic-default-fullname">Fecha de Nacimiento</label>
+                            <input asp-for="FechaDeNacimiento" type="date" class="form-control" style="">
+                            <span asp-validation-for="FechaDeNacimiento" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="Edad" class="form-label" for="basic-default-fullname">Edad</label>
+                            <input asp-for="Edad" type="text" class="form-control" style="width:90px">
+                            <span asp-validation-for="Edad" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div style="display:flex; margin-left:7px">
+                        <div class="mb-3">
+                            <label asp-for="Genero" class="form-label" for="basic-default-fullname">Genero</label>
+                            <select class="form-select" name="Genero">
+                                <option value="SELECCIONAR">Seleccionar</option>
+                                <option value="MASCULINO">Masculino</option>
+                                <option value="FEMENINO">Femenino</option>
+                                <option value="OTRO">Otro</option>
+                            </select>
+                            <span asp-validation-for="Genero" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="EstadoCivil" class="form-label" for="basic-default-fullname">Estado Civil</label>
+                            <select class="form-select" name="EstadoCivil">
+                                <option value="SELECCIONAR">Seleccionar</option>
+                                <option value="SOLTERO/A">Soltero/a</option>
+                                <option value="CASADO/A">Casado/a</option>
+                                <option value="DIVORCIADO/A">Divorciado/a</option>
+                                <option value="VIUDO/A">Viudo/a</option>
+                            </select>
+                            <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="Direccion" class="form-label" for="basic-default-fullname">Direccion</label>
+                            <input asp-for="Direccion" type="text" class="form-control" placeholder="Ingresar" style="width:500px">
+                            <span asp-validation-for="Direccion" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div style="display:flex; margin-left:5px">
+                        <div class="mb-3">
+                            <label asp-for="Telefono" class="form-label" for="basic-default-fullname">Telefono</label>
+                            <input asp-for="Telefono" type="text" class="form-control" placeholder="0000-0000" style="">
+                            <span asp-validation-for="Telefono" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="CorreoElectronico" class="form-label" for="basic-default-fullname">Correo Electronico</label>
+                            <input asp-for="CorreoElectronico" type="email" class="form-control" placeholder="Ingresar" style="">
+                            <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="NumeroDeEmergencia" class="form-label" for="basic-default-fullname">Numero de Emergencia</label>
+                            <input asp-for="NumeroDeEmergencia" type="text" class="form-control" placeholder="0000-0000" style="">
+                            <span asp-validation-for="NumeroDeEmergencia" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    @* Carta para Informacion Adicional *@
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header">Informacion Adicional</h5>
+                <div class="card-body demo-vertical-spacing demo-only-element">
+                    <div style="display:flex; margin-left:5px">
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="TipoDeBachillerato" class="form-label" for="basic-default-fullname">Tipo de Bachillerato</label>
+                            <input asp-for="TipoDeBachillerato" type="text" class="form-control" placeholder="Ingresar" style="width:500px">
+                            <span asp-validation-for="TipoDeBachillerato" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="TituloUniversitario" class="form-label" for="basic-default-fullname">Titulo Universitario</label>
+                            <input asp-for="TituloUniversitario" type="text" class="form-control" placeholder="Ingresar" style="width:500px">
+                            <span asp-validation-for="TituloUniversitario" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3" style="margin-left:inherit">
+                        <label asp-for="ExperienciaLaboral" class="form-label" for="basic-default-fullname">Experiencia Laboral</label>
+                        <input asp-for="ExperienciaLaboral" type="text" class="form-control" placeholder="Ingresar" style="width:800px">
+                        <span asp-validation-for="ExperienciaLaboral" class="text-danger"></span>
+                    </div>
+                    <div style="display:flex; margin-left:5px">
+                        <div class="mb-3">
+                            <label asp-for="AreaDeEspecializacion" class="form-label" for="basic-default-fullname">Area de Especializacion</label>
+                            <input asp-for="AreaDeEspecializacion" type="text" class="form-control" placeholder="Ingresar" style="width:700px">
+                            <span asp-validation-for="AreaDeEspecializacion" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3" style="margin-left:inherit">
+                            <label asp-for="PuestoOCargo" class="form-label" for="basic-default-fullname">Puesto o Cargo</label>
+                            <select class="form-select" name="PuestoOcargo">
+                                <option value="SELECCIONAR">Seleccionar</option>
+                                <option value="MAESTRO DE PIANO">Maestro de Piano</option>
+                                <option value="NAESTRO DE BATERIA">Maestro de Bateria</option>
+                                <option value="MAESTRO DE BAJO">Maestro de Bajo</option>
+                                <option value="MAESTRO DE GUITARRA">Maestro de Guitarra</option>
+                                <option value="MAESTRO DE CANTO">Maestro de Canto</option>
+                                <option value="ORDENANSA">Ordenansa</option>
+                                <option value="SECRETARIO/A">Secretario/a</option>
+                            </select>
+                            <span asp-validation-for="PuestoOCargo" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    @* Boton para Guarar y Regrear *@
+    <div class="form-group mb-3" style="margin-right:3%">
+        <input type="submit" value="Modificar Empleado" class="btn btn-primary" style="margin-right:3%; width:200px" />
+        <a asp-action="Index">Regresar</a>
+    </div>
+</form>
+
+
+@* Seccion de Scripts (C# o JavaScript) *@
+@section Scripts {
+
+    @* Script para insertar un - despues de 8 numeros en el campo Dui *@
+    <script>
+        // Obtén la referencia al elemento de entrada de DUI
+        var duiInput = document.querySelector('input[name="Dui"]');
+
+        // Almacena la longitud actual del valor del DUI para realizar un seguimiento de los cambios
+        var longitudActual = duiInput.value.length;
+
+        // Agrega un event listener para el evento de entrada de texto
+        duiInput.addEventListener('input', function () {
+            // Obtén el valor actual del campo de DUI
+            var duiValue = duiInput.value;
+
+            // Verifica si el campo está vacío y restablece la validación
+            if (duiValue.length === 0) {
+                longitudActual = 0;
+                return;
+            }
+
+            // Verifica si ya se ha ingresado el guion
+            var guionIndex = duiValue.indexOf('-');
+
+            // Si ya hay un guion y se modifica el último número, no agregues un guion nuevamente
+            if (guionIndex !== -1 && duiValue.length === longitudActual + 1) {
+                longitudActual++;
+                return;
+            }
+
+            // Agrega automáticamente el guion después de los primeros 8 dígitos
+            if (duiValue.length === 8) {
+                duiInput.value = duiValue.substring(0, 8) + '-';
+                longitudActual = duiValue.length + 1; // Se incrementa en 1 para considerar el guion
+            }
+
+            // Actualiza la longitud actual después de la modificación
+            longitudActual = duiValue.length;
+        });
+    </script>
+
+    @* Script para Calcular la Edad *@
+    <script>
+        // Obtén la referencia al elemento de entrada de fecha y de edad
+        var fechaInput = document.querySelector('input[name="FechaDeNacimiento"]');
+        var edadInput = document.querySelector('input[name="Edad"]');
+
+        // Agrega un event listener para el cambio en la fecha de nacimiento
+        fechaInput.addEventListener('change', function () {
+            // Obtiene la fecha de nacimiento del input
+            var fechaNacimiento = new Date(fechaInput.value);
+
+            // Obtiene la fecha actual
+            var fechaActual = new Date();
+
+            // Calcula la edad restando el año de nacimiento del año actual
+            var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+            // Ajusta la edad si la fecha de nacimiento aún no ha ocurrido este año
+            if (fechaNacimiento.getMonth() > fechaActual.getMonth() ||
+                (fechaNacimiento.getMonth() === fechaActual.getMonth() && fechaNacimiento.getDate() > fechaActual.getDate())) {
+                edad--;
+            }
+
+            // Actualiza el valor del campo de edad
+            edadInput.value = edad;
+        });
+    </script>
+
+    @* Script para Agregar Automaticamente un - despues de los primeros 4 digitos en Telefono y Numero de Emergencia *@
+    <script>
+        // Obtén la referencia a los elementos de entrada de Teléfono y Número de Emergencia
+        var telefonoInput = document.querySelector('input[name="Telefono"]');
+        var emergenciaInput = document.querySelector('input[name="NumeroDeEmergencia"]');
+
+        // Función para agregar el guion después de los primeros 4 dígitos
+        function agregarGuionDespuesDeCuatroDigitos(inputElement) {
+            var inputValue = inputElement.value;
+
+            // Verifica si ya se han ingresado los primeros 4 dígitos
+            if (inputValue.length === 4) {
+                // Agrega automáticamente el guion después de los primeros 4 dígitos
+                inputElement.value = inputValue.substring(0, 4) + '-';
+            }
+        }
+
+        // Agrega event listener para el evento de entrada de texto en el campo de Teléfono
+        telefonoInput.addEventListener('input', function () {
+            agregarGuionDespuesDeCuatroDigitos(telefonoInput);
+        });
+
+        // Agrega event listener para el evento de entrada de texto en el campo de Número de Emergencia
+        emergenciaInput.addEventListener('input', function () {
+            agregarGuionDespuesDeCuatroDigitos(emergenciaInput);
+        });
+    </script>
+
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
