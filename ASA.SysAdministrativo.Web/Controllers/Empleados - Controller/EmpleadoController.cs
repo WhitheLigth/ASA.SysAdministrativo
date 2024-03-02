@@ -29,7 +29,7 @@ namespace ASA.SysAdministrativo.Web.Controllers.Empleados___Controller
 
         #region METODOS PARA GUARDAR
         // Metodo que muestra la vista para crear una categoria
-        public ActionResult CreateEmpleadoView()
+        public ActionResult Create()
         {
             ViewBag.Error = "";
             return View();
@@ -38,7 +38,7 @@ namespace ASA.SysAdministrativo.Web.Controllers.Empleados___Controller
         // Accion que recibe los datos del formulario para ser enviados a la base de datos
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateAsync(Empleado pEmpleado)
+        public async Task<IActionResult> Create(Empleado pEmpleado)
         {
             try
             {
