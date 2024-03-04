@@ -49,7 +49,7 @@
                     <div style="display:flex; margin-left:7px">
                         <div class="mb-3">
                             <label asp-for="Genero" class="form-label" for="basic-default-fullname">Genero</label>
-                            <select class="form-select" name="Genero">
+                            <select class="form-select" name="Genero" id="cbxGenero">
                                 <option value="SELECCIONAR">Seleccionar</option>
                                 <option value="MASCULINO">Masculino</option>
                                 <option value="FEMENINO">Femenino</option>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="mb-3" style="margin-left:inherit">
                             <label asp-for="EstadoCivil" class="form-label" for="basic-default-fullname">Estado Civil</label>
-                            <select class="form-select" name="EstadoCivil">
+                            <select class="form-select" name="EstadoCivil" id="cbxEstadoCivil">
                                 <option value="SELECCIONAR">Seleccionar</option>
                                 <option value="SOLTERO/A">Soltero/a</option>
                                 <option value="CASADO/A">Casado/a</option>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="mb-3" style="margin-left:inherit">
                             <label asp-for="PuestoOCargo" class="form-label" for="basic-default-fullname">Puesto o Cargo</label>
-                            <select class="form-select" name="PuestoOcargo">
+                            <select class="form-select" name="PuestoOcargo" id="cbxPuestoOCargo">
                                 <option value="SELECCIONAR">Seleccionar</option>
                                 <option value="MAESTRO DE PIANO">Maestro de Piano</option>
                                 <option value="NAESTRO DE BATERIA">Maestro de Bateria</option>
@@ -155,6 +155,20 @@
 
 @* Seccion de Scripts (C# o JavaScript) *@
 @section Scripts {
+
+    @* Script para mostrar el dato de los Select extraidos desde la BD *@
+    <script>
+        $(document).ready(function () {
+            // Establecer el valor seleccionado para cbxGenero
+            $("#cbxGenero").val('@Model.Genero');
+
+            // Establecer el valor seleccionado para cbxEstadoCivil
+            $("#cbxEstadoCivil").val('@Model.EstadoCivil');
+
+            // Establecer el valor seleccionado para cbxPuestoOCargo
+            $("#cbxPuestoOCargo").val('@Model.PuestoOCargo');
+        });
+    </script>
 
     @* Script para insertar un - despues de 8 numeros en el campo Dui *@
     <script>
